@@ -16,7 +16,10 @@ export class EventsGateway {
         @MessageBody()
         payload,
     ) {
+        const out = 'hello, ' + payload;
         console.log(payload);
-        this.server.emit('events', 'hello, ' + payload);
+        // uncomment it if you would like to use socket.io-client
+        // this.server.emit('events', 'hello, ' + out);
+        return out;
     }
 }
